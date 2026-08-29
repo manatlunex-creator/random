@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kral Games ⚡</title>
+    <title>Kral Games - Admin Panel ⚙️</title>
     <style>
         :root {
-            --bg-dark: #0a0505;
-            --bg-card: #140a0a;
+            --bg-dark: #050305;
+            --bg-card: #0f0709;
             --neon-red: #ff003c;
             --neon-red-glow: rgba(255, 0, 60, 0.4);
             --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --border-color: #2a1216;
+            --text-muted: #9e9e9e;
+            --border-color: #2b0c14;
         }
 
         * {
@@ -31,7 +31,9 @@
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 0%, #2b050a 0%, var(--bg-dark) 70%);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(255, 0, 60, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 10% 90%, rgba(138, 3, 33, 0.1) 0%, transparent 50%);
         }
 
         .container {
@@ -42,7 +44,9 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            box-shadow: 0 0 30px rgba(255, 0, 60, 0.15);
+            box-shadow: 0 0 40px rgba(255, 0, 60, 0.2);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
         }
 
         .screen {
@@ -50,7 +54,6 @@
             flex: 1;
             flex-direction: column;
             padding: 20px;
-            animation: fadeIn 0.4s ease-in-out;
             overflow-y: auto;
         }
 
@@ -58,36 +61,28 @@
             display: flex;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .neon-title {
             text-align: center;
-            font-size: 28px;
-            font-weight: 800;
+            font-size: 26px;
+            font-weight: 900;
             color: #fff;
-            text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
+            text-shadow: 0 0 12px var(--neon-red);
             margin-bottom: 25px;
-            letter-spacing: 1px;
         }
 
         .input-group {
-            position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
         input, select {
             width: 100%;
-            padding: 14px 45px 14px 16px;
+            padding: 14px 16px;
             background: var(--bg-card);
             border: 2px solid var(--border-color);
             border-radius: 12px;
             color: #fff;
             font-size: 15px;
             outline: none;
-            transition: all 0.3s;
         }
 
         input:focus, select:focus {
@@ -95,20 +90,10 @@
             box-shadow: 0 0 12px var(--neon-red-glow);
         }
 
-        .eye-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: var(--text-muted);
-            font-size: 18px;
-        }
-
         .btn {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #ff003c, #b3002a);
+            background: linear-gradient(135deg, #ff003c, #990024);
             border: none;
             border-radius: 12px;
             color: #fff;
@@ -116,26 +101,8 @@
             font-weight: 700;
             cursor: pointer;
             box-shadow: 0 0 15px var(--neon-red-glow);
-            transition: all 0.2s;
             margin-top: 10px;
             text-transform: uppercase;
-        }
-
-        .btn:active {
-            transform: scale(0.97);
-        }
-
-        .link-text {
-            text-align: center;
-            margin-top: 20px;
-            color: var(--text-muted);
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .link-text span {
-            color: var(--neon-red);
-            font-weight: 600;
         }
 
         .header {
@@ -143,154 +110,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background: rgba(20, 10, 10, 0.8);
+            background: rgba(15, 7, 9, 0.9);
             border-bottom: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-        }
-
-        .balance-badge {
-            background: var(--bg-card);
-            border: 1px solid var(--neon-red);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            color: #fff;
-            box-shadow: 0 0 10px var(--neon-red-glow);
-        }
-
-        .banner {
-            width: 100%;
-            height: 140px;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border: 2px solid var(--neon-red);
-            box-shadow: 0 0 20px var(--neon-red-glow);
-            position: relative;
-        }
-
-        .banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .bonus-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff003c;
-            color: white;
-            padding: 6px 12px;
-            font-size: 11px;
-            font-weight: 900;
-            border-radius: 8px;
-            box-shadow: 0 0 10px #fff;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .game-card {
-            background: var(--bg-card);
-            border: 2px solid var(--border-color);
-            border-radius: 16px;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-card:hover {
-            border-color: var(--neon-red);
-            box-shadow: 0 0 15px var(--neon-red-glow);
-            transform: translateY(-3px);
-        }
-
-        .game-card img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
-        }
-
-        .game-card h3 {
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-
-        .coming-soon-badge {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 5, 5, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 13px;
-            font-weight: bold;
-            color: var(--neon-red);
-            text-align: center;
-            padding: 10px;
-            backdrop-filter: blur(2px);
-        }
-
-        .bottom-nav {
-            display: flex;
-            justify-content: space-around;
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            padding: 12px 0;
-        }
-
-        .nav-item {
-            color: var(--text-muted);
-            font-size: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .nav-item.active {
-            color: var(--neon-red);
-            text-shadow: 0 0 8px var(--neon-red-glow);
-        }
-
-        .deposit-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .card-number-box {
-            background: #000;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-family: monospace;
-            font-size: 18px;
-            letter-spacing: 2px;
-            color: var(--neon-red);
-            margin: 10px 0;
-            border: 1px dashed var(--neon-red);
         }
 
         .admin-section {
@@ -317,7 +138,7 @@
         }
 
         .stat-box {
-            background: #0a0505;
+            background: #050305;
             border: 1px solid var(--border-color);
             padding: 10px;
             border-radius: 10px;
@@ -337,125 +158,24 @@
 
 <div class="container">
 
-    <!-- GİRİŞ EKRANI -->
-    <div id="loginScreen" class="screen active">
-        <h1 class="neon-title" style="margin-top: 40px;">KRAL GAMES</h1>
+    <!-- ADMİN GİRİŞ EKRANI -->
+    <div id="adminLoginScreen" class="screen active">
+        <h1 class="neon-title" style="margin-top: 60px;">ADMİN PANEL ⚙️</h1>
         <div class="input-group">
-            <input type="text" id="loginUser" placeholder="İstifadəçi adı">
+            <input type="text" id="adminUser" placeholder="Admin istifadəçi adı">
         </div>
         <div class="input-group">
-            <input type="password" id="loginPass" placeholder="Şifrə">
-            <span class="eye-icon" onclick="togglePassword('loginPass', this)">👁️</span>
+            <input type="password" id="adminPass" placeholder="Admin şifrəsi">
         </div>
-        <button class="btn" onclick="login()">GİRİŞ ET</button>
-        <div class="link-text" onclick="switchScreen('registerScreen')">Hesabın yoxdur? <span>Qeydiyyatdan keç</span></div>
+        <button class="btn" onclick="adminLogin()">ADMİN GİRİŞİ</button>
     </div>
 
-    <!-- QEYDİYYAT EKRANI -->
-    <div id="registerScreen" class="screen">
-        <h1 class="neon-title" style="margin-top: 40px;">QEYDİYYAT</h1>
-        <div class="input-group">
-            <input type="text" id="regUser" placeholder="İstifadəçi adı seç">
-        </div>
-        <div class="input-group">
-            <input type="password" id="regPass" placeholder="Şifrə yarat">
-            <span class="eye-icon" onclick="togglePassword('regPass', this)">👁️</span>
-        </div>
-        <button class="btn" onclick="register()">QEYDİYYATI TAMAMLA</button>
-        <div class="link-text" onclick="switchScreen('loginScreen')">Artıq hesabın var? <span>Daxil ol</span></div>
-    </div>
-
-    <!-- ƏSAS MAĞAZA EKRANI -->
-    <div id="mainScreen" class="screen" style="padding: 0;">
+    <!-- ADMİN PANEL İDARƏETMƏ EKRANI -->
+    <div id="adminPanelScreen" class="screen" style="padding: 0;">
         <div class="header">
-            <h3>Kral Games ⚡</h3>
-            <div class="balance-badge" id="userBalance">0.00 ₼</div>
+            <h3>İdarə Paneli ⚙️</h3>
+            <div style="cursor: pointer; color: var(--neon-red); font-size: 13px;" onclick="adminLogout()">Çıxış</div>
         </div>
-        <div style="padding: 20px; overflow-y: auto; flex: 1;">
-            <div class="banner">
-                <div class="bonus-badge"> İLK DEPOZİTƏ +100% BONUS </div>
-                <img src="banner.jpg" alt="Banner" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60'">
-            </div>
-
-            <div class="games-grid">
-                <div class="game-card" onclick="openGame('PUBG')">
-                    <img src="pubg.png" alt="PUBG" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1182/1182743.png'">
-                    <h3>PUBG Mobile</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Random Hesablar</p>
-                </div>
-                <div class="game-card" onclick="openGame('eFootball')">
-                    <img src="pes.png" alt="eFootball" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1077/1077012.png'">
-                    <h3>eFootball</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Güclü Heyətlər</p>
-                </div>
-                <div class="game-card" style="cursor: default;">
-                    <img src="bs.png" alt="Brawl Stars" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3408/3408506.png'">
-                    <h3>Brawl Stars</h3>
-                    <div class="coming-soon-badge">TEZLİKLƏ GƏLİR 🚀</div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-nav">
-            <div class="nav-item active" onclick="switchTab('store')">🛒 Mağaza</div>
-            <div class="nav-item" onclick="switchTab('deposit')">💳 Depozit</div>
-            <div class="nav-item" onclick="switchTab('orders')">📦 Sifarişlərim</div>
-            <div class="nav-item" id="adminTabBtn" style="display:none;" onclick="switchTab('admin')">⚙️ Admin</div>
-        </div>
-    </div>
-
-    <!-- DEPOZİT EKRANI -->
-    <div id="depositScreen" class="screen" style="padding: 0;">
-        <div class="header"><h3>Balansı Artır</h3></div>
-        <div style="padding: 20px; overflow-y: auto; flex: 1;">
-            <div class="deposit-card">
-                <p style="font-size: 13px; color: var(--text-muted);">Pul köçürmək üçün aktiv kart:</p>
-                <div class="card-number-box" id="displayCardNumber">4169 7388 2000 1234</div>
-                <p style="font-size: 12px; color: var(--text-muted); text-align: center;">Minimum depozit: 2 AZN</p>
-            </div>
-
-            <div class="input-group">
-                <input type="number" id="depAmount" placeholder="Məbləği daxil et (AZN)">
-            </div>
-            <div class="input-group">
-                <label style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 5px;">Ödəniş çekini yüklə (Skrinşot):</label>
-                <input type="file" id="depCheck" accept="image/*" style="padding: 10px;">
-            </div>
-            <button class="btn" onclick="sendDeposit()">TƏSDİQƏ GÖNDƏR</button>
-        </div>
-        <div class="bottom-nav">
-            <div class="nav-item" onclick="switchTab('store')">🛒 Mağaza</div>
-            <div class="nav-item active" onclick="switchTab('deposit')">💳 Depozit</div>
-            <div class="nav-item" onclick="switchTab('orders')">📦 Sifarişlərim</div>
-            <div class="nav-item" id="adminTabBtn2" style="display:none;" onclick="switchTab('admin')">⚙️ Admin</div>
-        </div>
-    </div>
-
-    <!-- SİFARİŞLƏRİM EKRANI -->
-    <div id="ordersScreen" class="screen" style="padding: 0;">
-        <div class="header"><h3>Sifarişlərim</h3></div>
-        <div style="padding: 20px; overflow-y: auto; flex: 1;" id="myOrdersList">
-            <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">Hələ heç bir hesab almamısan.</p>
-        </div>
-        <div class="bottom-nav">
-            <div class="nav-item" onclick="switchTab('store')">🛒 Mağaza</div>
-            <div class="nav-item" onclick="switchTab('deposit')">💳 Depozit</div>
-            <div class="nav-item active" onclick="switchTab('orders')">📦 Sifarişlərim</div>
-            <div class="nav-item" id="adminTabBtn3" style="display:none;" onclick="switchTab('admin')">⚙️ Admin</div>
-        </div>
-    </div>
-
-    <!-- OYUN MAĞAZASI DETAY -->
-    <div id="gameDetailScreen" class="screen" style="padding: 0;">
-        <div class="header">
-            <h3 id="gameTitle">Oyun</h3>
-            <div style="cursor: pointer; color: var(--neon-red);" onclick="backToStore()">Geri</div>
-        </div>
-        <div style="padding: 20px; overflow-y: auto; flex: 1;" id="gameStockList"></div>
-    </div>
-
-    <!-- ADMİN PANEL EKRANI -->
-    <div id="adminScreen" class="screen" style="padding: 0;">
-        <div class="header"><h3>Admin İdarə Paneli ⚙️</h3></div>
         <div style="padding: 20px; overflow-y: auto; flex: 1;">
             
             <div class="stat-grid">
@@ -473,7 +193,7 @@
                 </div>
             </div>
 
-            <!-- KART NÖMRƏSİNİ DƏYİŞMƏK ÜÇÜN BÖLÜM -->
+            <!-- KART NÖMRƏSİNİ DƏYİŞMƏK -->
             <div class="admin-section">
                 <h4>💳 Ödəniş Kartını Yenilə</h4>
                 <div class="input-group">
@@ -482,6 +202,7 @@
                 <button class="btn" onclick="updateAdminCard()">Kartı Yenilə</button>
             </div>
 
+            <!-- HESAB ƏLAVƏ ETMƏK -->
             <div class="admin-section">
                 <h4>➕ Yeni Hesab Əlavə Et</h4>
                 <div class="input-group">
@@ -499,6 +220,7 @@
                 <button class="btn" onclick="addStock()">Stoka Əlavə Et</button>
             </div>
 
+            <!-- DEPOZİTLƏR -->
             <div class="admin-section">
                 <h4>💳 Təsdiq Gözləyən Depozitlər</h4>
                 <div id="adminDepositsList">
@@ -506,12 +228,6 @@
                 </div>
             </div>
 
-        </div>
-        <div class="bottom-nav">
-            <div class="nav-item" onclick="switchTab('store')">🛒 Mağaza</div>
-            <div class="nav-item" onclick="switchTab('deposit')">💳 Depozit</div>
-            <div class="nav-item" onclick="switchTab('orders')">📦 Sifarişlərim</div>
-            <div class="nav-item active" onclick="switchTab('admin')">⚙️ Admin</div>
         </div>
     </div>
 
@@ -526,94 +242,38 @@
         cardNumber: "4169 7388 2000 1234"
     };
 
-    let currentUser = JSON.parse(localStorage.getItem('kral_current_user')) || null;
+    let isAdminLoggedIn = localStorage.getItem('kral_admin_logged') === 'true';
 
-    function saveData() {
-        localStorage.setItem('kral_games_db', JSON.stringify(db));
-        localStorage.setItem('kral_current_user', JSON.stringify(currentUser));
+    if(isAdminLoggedIn) {
+        showAdminPanel();
     }
 
-    function togglePassword(id, el) {
-        let input = document.getElementById(id);
-        if (input.type === "password") {
-            input.type = "text";
-            el.textContent = "👁️‍🗨️";
+    function adminLogin() {
+        let u = document.getElementById('adminUser').value.trim();
+        let p = document.getElementById('adminPass').value.trim();
+
+        if(u === 'Escoba211_1' && p === 'Qaqash211_5') {
+            isAdminLoggedIn = true;
+            localStorage.setItem('kral_admin_logged', 'true');
+            showAdminPanel();
         } else {
-            input.type = "password";
-            el.textContent = "👁️";
+            alert('Yanlış admin məlumatları!');
         }
     }
 
-    function switchScreen(screenId) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById(screenId).classList.add('active');
+    function adminLogout() {
+        isAdminLoggedIn = false;
+        localStorage.removeItem('kral_admin_logged');
+        document.getElementById('adminPanelScreen').classList.remove('active');
+        document.getElementById('adminLoginScreen').classList.add('active');
+        document.getElementById('adminUser').value = '';
+        document.getElementById('adminPass').value = '';
     }
 
-    function register() {
-        let u = document.getElementById('regUser').value.trim();
-        let p = document.getElementById('regPass').value.trim();
-        if(!u || !p) {
-            alert('Bütün xanaları doldurun!');
-            return;
-        }
-        if(db.users.find(x => x.username === u)) {
-            alert('Bu istifadəçi adı artıq mövcuddur!');
-            return;
-        }
-        db.users.push({username: u, password: p, balance: 0, isFirstDeposit: true});
-        saveData();
-        alert('Qeydiyyat uğurla tamamlandı! İndi daxil olun.');
-        switchScreen('loginScreen');
-    }
-
-    function login() {
-        let u = document.getElementById('loginUser').value.trim();
-        let p = document.getElementById('loginPass').value.trim();
-
-        if(u === 'Escoba211_1' && p === 'Qaqas211_1') {
-                currentUser = {username: 'Admin', isAdmin: true, balance: 999999};
-            saveData();
-            initMainApp();
-            return;
-        }
-
-        let user = db.users.find(x => x.username === u && x.password === p);
-        if(!user) {
-            alert('İstifadəçi adı və ya şifrə səhvdir!');
-            return;
-        }
-        currentUser = user;
-        saveData();
-        initMainApp();
-    }
-
-    function initMainApp() {
-        switchTab('store');
-        document.getElementById('userBalance').textContent = currentUser.balance.toFixed(2) + ' ₼';
-        document.getElementById('displayCardNumber').textContent = db.cardNumber || "4169 7388 2000 1234";
-        
-        let adminBtns = [document.getElementById('adminTabBtn'), document.getElementById('adminTabBtn2'), document.getElementById('adminTabBtn3')];
-        adminBtns.forEach(btn => {
-            if(btn) btn.style.display = (currentUser.isAdmin) ? 'block' : 'none';
-        });
-
-        switchScreen('mainScreen');
-    }
-
-    function switchTab(tabName) {
-        if(tabName === 'store') {
-            switchScreen('mainScreen');
-        } else if(tabName === 'deposit') {
-            document.getElementById('displayCardNumber').textContent = db.cardNumber || "4169 7388 2000 1234";
-            switchScreen('depositScreen');
-        } else if(tabName === 'orders') {
-            renderOrders();
-            switchScreen('ordersScreen');
-        } else if(tabName === 'admin') {
-            if(!currentUser.isAdmin) return;
-            renderAdminPanel();
-            switchScreen('adminScreen');
-        }
+    function showAdminPanel() {
+        document.getElementById('adminLoginScreen').classList.remove('active');
+        document.getElementById('adminPanelScreen').classList.add('active');
+        renderAdminPanel();
     }
 
     function updateAdminCard() {
@@ -623,37 +283,15 @@
             return;
         }
         db.cardNumber = newCard;
-        saveData();
+        localStorage.setItem('kral_games_db', JSON.stringify(db));
         alert('Ödəniş kartı uğurla yeniləndi!');
         document.getElementById('adminNewCardInput').value = '';
     }
 
-    function sendDeposit() {
-        let amount = parseFloat(document.getElementById('depAmount').value);
-        let checkFile = document.getElementById('depCheck').files[0];
-
-        if(isNaN(amount) || amount < 2) {
-            alert('Minimum depozit məbləği 2 AZN olmalıdır!');
-            return;
-        }
-        if(!checkFile) {
-            alert('Zəhmət olmasa ödəniş çekini (skrinşot) yükləyin!');
-            return;
-        }
-
-        db.deposits.push({
-            id: Date.now(),
-            username: currentUser.username,
-            amount: amount,
-            status: 'pending'
-        });
-        saveData();
-        alert('Depozit sorğunuz adminə göndərildi. Təsdiq gözlənilir.');
-        document.getElementById('depAmount').value = '';
-        document.getElementById('depCheck').value = '';
-    }
-
     function renderAdminPanel() {
+        // Hər dəfə paneli açanda bazanı yenidən oxuyuruq ki, istifadəçi depozit atanda dərhal görsუნქ
+        db = JSON.parse(localStorage.getItem('kral_games_db')) || db;
+
         let totalStocks = (db.stocks.PUBG ? db.stocks.PUBG.length : 0) + (db.stocks.eFootball ? db.stocks.eFootball.length : 0);
         let pendingCount = db.deposits.filter(d => d.status === 'pending').length;
 
@@ -668,7 +306,7 @@
             return;
         }
         container.innerHTML = pending.map(d => `
-            <div style="background: #0a0505; padding: 12px; border-radius: 10px; margin-bottom: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <div style="background: #050305; padding: 12px; border-radius: 10px; margin-bottom: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
                 <div>
                     <p style="font-size: 14px; font-weight: bold;">👤 ${d.username}</p>
                     <p style="color: var(--neon-red); font-weight: bold; margin-top: 3px;">💰 ${d.amount} AZN</p>
@@ -679,6 +317,7 @@
     }
 
     function approveDeposit(id) {
+        db = JSON.parse(localStorage.getItem('kral_games_db')) || db;
         let dep = db.deposits.find(d => d.id === id);
         if(!dep) return;
         dep.status = 'approved';
@@ -692,7 +331,7 @@
             }
             targetUser.balance += finalAmount;
         }
-        saveData();
+        localStorage.setItem('kral_games_db', JSON.stringify(db));
         renderAdminPanel();
         alert('Depozit təsdiq olundu!');
     }
@@ -707,89 +346,13 @@
             return;
         }
 
+        db = JSON.parse(localStorage.getItem('kral_games_db')) || db;
         db.stocks[game].push({id: Date.now(), account: acc, price: price});
-        saveData();
+        localStorage.setItem('kral_games_db', JSON.stringify(db));
         alert('Hesab stoka əlavə olundu!');
         document.getElementById('adminAccountData').value = '';
         document.getElementById('adminPrice').value = '';
         renderAdminPanel();
-    }
-
-    function openGame(gameName) {
-        document.getElementById('gameTitle').textContent = gameName + ' Hesabları';
-        let listContainer = document.getElementById('gameStockList');
-        let items = db.stocks[gameName] || [];
-
-        if(items.length === 0) {
-            listContainer.innerHTML = `<p style="text-align: center; color: var(--text-muted); margin-top: 30px;">Bu oyunda hazırda stok yoxdur.</p>`;
-        } else {
-            listContainer.innerHTML = items.map(item => `
-                <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 15px; border-radius: 12px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <p style="font-weight: bold; margin-bottom: 5px;">${gameName} Hesabı</p>
-                        <p style="color: var(--neon-red); font-weight: bold;">${item.price} ₼</p>
-                    </div>
-                    <button class="btn" style="width: auto; padding: 8px 15px; margin: 0;" onclick="buyItem('${gameName}', ${item.id})">Al</button>
-                </div>
-            `).join('');
-        }
-        switchScreen('gameDetailScreen');
-    }
-
-    function backToStore() {
-        switchScreen('mainScreen');
-    }
-
-    function buyItem(gameName, itemId) {
-        let index = db.stocks[gameName].findIndex(i => i.id === itemId);
-        if(index === -1) return;
-        let item = db.stocks[gameName][index];
-
-        if(currentUser.balance < item.price) {
-            alert('Balansınızda kifayət qədər vəsait yoxdur! Depozit bölməsindən balansı artırın.');
-            return;
-        }
-
-        currentUser.balance -= item.price;
-        if(!currentUser.isAdmin) {
-            let uInDb = db.users.find(u => u.username === currentUser.username);
-            if(uInDb) uInDb.balance = currentUser.balance;
-        }
-
-        db.stocks[gameName].splice(index, 1);
-        db.orders.push({
-            username: currentUser.username,
-            game: gameName,
-            account: item.account,
-            date: new Date().toLocaleDateString()
-        });
-
-        saveData();
-        document.getElementById('userBalance').textContent = currentUser.balance.toFixed(2) + ' ₼';
-        alert('Məhsul uğurla alındı! "Sifarişlərim" bölməsindən baxa bilərsiniz.');
-        openGame(gameName);
-    }
-
-    function renderOrders() {
-        let container = document.getElementById('myOrdersList');
-        let myOrders = db.orders.filter(o => o.username === currentUser.username);
-
-        if(myOrders.length === 0) {
-            container.innerHTML = `<p style="color: var(--text-muted); text-align: center; margin-top: 40px;">Hələ heç bir hesab almamısan.</p>`;
-            return;
-        }
-
-        container.innerHTML = myOrders.map(o => `
-            <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 15px; border-radius: 12px; margin-bottom: 10px;">
-                <p style="font-weight: bold; color: var(--neon-red); margin-bottom: 5px;">${o.game}</p>
-                <p style="font-size: 14px; font-family: monospace; background: #000; padding: 8px; border-radius: 6px;">Hesab: ${o.account}</p>
-                <p style="font-size: 11px; color: var(--text-muted); margin-top: 5px;">Tarix: ${o.date}</p>
-            </div>
-        `).join('');
-    }
-
-    if(currentUser) {
-        initMainApp();
     }
 </script>
 
